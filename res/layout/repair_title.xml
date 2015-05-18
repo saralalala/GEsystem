@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal">
+    
+    <TextView
+        android:id="@+id/equipment1"
+        style="@style/titlestyle"
+        android:text="序号"
+        >  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment2"
+        style="@style/titlestyle"
+        android:text="日期">  
+    </TextView>
+  
+    <TextView
+        android:id="@+id/equipment3"
+        style="@style/titlestyle"
+        android:text="时间">
+        
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment4"
+        style="@style/titlestyle"
+        android:text="设备名称">
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment5"
+        style="@style/titlestyle"
+        android:text="备忘录">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment6"
+        style="@style/titlestyle"
+        android:text="用户类型">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment7"
+        style="@style/titlestyle"
+        android:text="用户ID">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment8"
+        style="@style/titlestyle"
+        android:text="deal">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment9"
+        style="@style/titlestyle"
+        android:text="dealid">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment10"
+        style="@style/titlestyle"
+        android:text="维修结果">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment11"
+        style="@style/titlestyle"
+        android:text="维修日期">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment12"
+        style="@style/titlestyle"
+        android:text="维修时间">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment13"
+        style="@style/titlestyle"
+        android:text="维修状态">  
+    </TextView>
+    
+
+</LinearLayout>

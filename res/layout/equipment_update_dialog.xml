@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="序        号:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog1"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number"
+	        android:focusable="false">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="名        称:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog2"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="型        号:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog3"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="规        格:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog4"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment5"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="价        格:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog5"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment6"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="房        间:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog6"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment7"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="组        号:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog7"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment8"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="管  理  人:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog8"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment9"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="设备状态:">  
+    	</TextView>
+    	<Spinner
+	        android:id="@+id/dialog9"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+        	android:entries="@array/estate">  
+	    </Spinner>
+    </TableRow>
+    
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment10"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="借用状态:">  
+    	</TextView>
+    	<Spinner
+	        android:id="@+id/dialog10"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+        	android:entries="@array/ustate">  
+	    </Spinner>>	
+    </TableRow>
+    
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment11"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="维修状态:">  
+    	</TextView>
+    	<Spinner
+	        android:id="@+id/dialog11"
+	        android:layout_width="300dp"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:gravity="center"
+        	android:textSize="15dp"
+        	android:entries="@array/repairstate">  
+	    </Spinner>	
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+  <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="生成报修表" />
+        
+         <!--<TextView
+        	android:id="@+id/tv1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="报修序号"/>--> 
+
+       <!--  <EditText
+            android:id="@+id/et1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/> --> 
+        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="报修日期"/>
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="报修时间"/>
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="设备状态"/>
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv5"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="备忘录"/>
+        <EditText
+            android:id="@+id/et5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv6"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="用户类型"/>
+        <EditText
+            android:id="@+id/et6"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv7"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="用户ID"/>
+        <EditText
+            android:id="@+id/et7"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv8"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="deal"/>
+        <EditText
+            android:id="@+id/et8"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv9"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="dealID"/>
+        <EditText
+            android:id="@+id/et9"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv10"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="维修结果"/>
+        <EditText
+            android:id="@+id/et10"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv11"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="维修日期"/>
+        <EditText
+            android:id="@+id/et11"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv12"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="维修时间"/>
+        <EditText
+            android:id="@+id/et12"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv13"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="维修状态"/>
+        <Spinner
+	        android:id="@+id/et13"
+	        android:layout_width="200dp"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="5dp"
+        	android:textSize="15dp"
+        	android:entries="@array/repairstate">  
+	    </Spinner>
+    </LinearLayout>
+   <RelativeLayout 
+        android:layout_width="240dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+        
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="重置" />
+        <Button
+        	android:id="@+id/ok"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:text="确定"/>
+    </RelativeLayout>
+
+</LinearLayout>

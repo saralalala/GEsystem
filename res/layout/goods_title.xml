@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal">
+    
+    <TextView
+        android:id="@+id/goods1"
+        style="@style/titlestyle"
+        android:text="序号"
+        >  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods2"
+        style="@style/titlestyle"
+        android:text="名称">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods3"
+        style="@style/titlestyle"
+        android:text="型号">
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods4"
+        style="@style/titlestyle"
+        android:text="单价">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods5"
+        style="@style/titlestyle"
+        android:text="数量">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods6"
+        style="@style/titlestyle"
+        android:text="编目">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods7"
+        style="@style/titlestyle"
+        android:text="状态">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/goods8"
+        style="@style/titlestyle"
+        android:text="照片">  
+    </TextView>
+    
+
+</LinearLayout>

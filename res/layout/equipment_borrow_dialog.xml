@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="设备名称:">  
+    	</TextView>
+    	<TextView
+	        android:id="@+id/dialog1"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp">  
+	    </TextView>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="借用人ID:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog2"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+        	android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="借用日期:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog3"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="0000-00-00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="借用时间:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog4"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="00:00:00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment5"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="归还日期:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog5"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="0000-00-00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment6"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="归还时间:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog6"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="00:00:00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment7"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="备 忘 录:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog7"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp">  
+	    </EditText>
+    	
+    </TableRow>
+
+</TableLayout>

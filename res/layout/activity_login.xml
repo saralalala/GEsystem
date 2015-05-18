@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/lightgray"
+    tools:context=".LoginActivity" >
+    <LinearLayout
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:gravity="center" 
+        android:layout_weight="2">
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"
+            
+            android:padding="10dp">
+            <TextView 
+                android:id="@+id/tvcategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/spcategory"
+                android:layout_alignBaseline="@+id/spcategory"
+                android:layout_marginLeft="16dp"
+                android:text="@string/category"/>
+            <Spinner
+                android:id="@+id/spcategory"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvcategory"
+                android:entries="@array/user"/>
+            
+            <TextView 
+                android:id="@+id/tvname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user"
+                android:layout_toLeftOf="@id/spcategory"
+                android:layout_alignBottom="@+id/etname"
+                android:layout_alignBaseline="@+id/etname"/>
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvcategory"
+                android:layout_toRightOf="@id/tvname"/>
+            
+            <TextView
+                android:id="@+id/tvpassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+				android:layout_alignBottom="@+id/etpassword"
+                android:layout_toLeftOf="@id/etname"
+                android:layout_alignBaseline="@+id/etpassword"/>
+           <EditText
+                android:id="@+id/etpassword"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvname"
+                android:layout_toRightOf="@id/tvpassword"/>
+			
+        </RelativeLayout>
+	</LinearLayout>
+    <LinearLayout 
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="8">
+        <RelativeLayout 
+        	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+			<Button 
+			    android:id="@+id/btlogin"
+			    android:layout_width="80dp"
+			    android:layout_height="wrap_content"
+			    android:layout_toLeftOf="@+id/btexist"
+			    android:layout_marginRight="10dp"
+			    android:text="登陆"
+			    android:padding="10dp"/>
+			<Button 
+			    android:id="@+id/btexist"
+			    android:layout_width="80dp"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentRight="true"
+			    android:layout_marginRight="10dp"
+			    android:text="退出"
+			    android:padding="10dp"/>   
+        </RelativeLayout>
+	</LinearLayout>
+	
+   
+</LinearLayout>

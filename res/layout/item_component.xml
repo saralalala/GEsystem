@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="horizontal"
+    android:background="@drawable/lightgray" >
+    
+    <TextView
+        android:id="@+id/comp1"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp2"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp3"
+        style="@style/titlestyle">"
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp4"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp5"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp6"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp7"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp8"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp9"
+        style="@style/titlestyle">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/comp10"
+        style="@style/titlestyle">  
+    </TextView>
+    
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal">
+    
+    <TextView
+        android:id="@+id/equipment1"
+        style="@style/titlestyle"
+        android:text="序号"
+        >  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment2"
+        style="@style/titlestyle"
+        android:text="设备ID">  
+    </TextView>
+  
+    <TextView
+        android:id="@+id/equipment3"
+        style="@style/titlestyle"
+        android:text="借用人">
+        
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment4"
+        style="@style/titlestyle"
+        android:text="经手人">
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment5"
+        style="@style/titlestyle"
+        android:text="借用日期">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment6"
+        style="@style/titlestyle"
+        android:text="借用时间">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment7"
+        style="@style/titlestyle"
+        android:text="归还日期">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment8"
+        style="@style/titlestyle"
+        android:text="归还时间">  
+    </TextView>
+    
+    <TextView
+        android:id="@+id/equipment9"
+        style="@style/titlestyle"
+        android:text="备忘">  
+    </TextView>
+    
+
+</LinearLayout>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/view_title" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="设备名称"/>
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="规格"/>
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="型号"/>
+        <EditText
+            android:id="@+id/et3"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="日期"/>
+        <EditText
+            android:id="@+id/et4"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="0000-00-00"
+            android:inputType="number" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv5"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="时间"/>
+        <EditText
+            android:id="@+id/et5"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="00:00:00"
+            android:inputType="number" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv6"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="价格"/>
+        <EditText
+            android:id="@+id/et6"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv7"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="数量"/>
+        <EditText
+            android:id="@+id/et7"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    
+     <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_margin="5dp">
+        <TextView
+        	android:id="@+id/tv8"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:text="备注"/>
+        <EditText
+            android:id="@+id/et8"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    
+   <RelativeLayout 
+        android:layout_width="240dp"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+        
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="重置" />
+        <Button
+        	android:id="@+id/ok"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:text="确定"/>
+    </RelativeLayout>
+
+</LinearLayout>

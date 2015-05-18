@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.desystem"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.example.desystem" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/app"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+
+        android:windowSoftInputMode="adjustPan" >
+        
+        <!--
+          android:launchMode="singleTask"
+          android:screenOrientation="landscape"
+        -->
+        
+        <activity
+            android:name="com.example.desystem.LoginActivity"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.MainTabActivity1"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.MainTabActivity2"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.MainTabActivity3"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.MainTabActivity4"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.desystem.HomeActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentActivity"
+            android:label="@string/app_title"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.UserActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.MoreActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsInfoActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsAddActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsDeleteActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsCheckActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.GoodsCaculateActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentInfoActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentBorrowActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentRepairActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentAddActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentAddInfoActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentBorrowInfoActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentRepairInfoActivity"
+            android:label="@string/app_title" >
+        </activity>
+
+        <activity
+            android:name="com.example.desystem.GoodsListActivity"
+            android:label="@string/app_title" >
+        </activity>
+        <activity
+            android:name="com.example.desystem.EquipmentListActivity"
+            android:label="@string/app_title" >
+        </activity>
+
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name="com.example.desystem.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="darkgray">#404040ff</drawable>
+    <drawable name="black">#000</drawable>
+    <drawable name="lightgray">#c0c0c0ff</drawable>
+    <drawable name="gray">#808080ff</drawable>
+    <drawable name="red">#ff00ff</drawable>
+    <drawable name="blue">#00ffff</drawable>
+    <drawable name="yellow">#ffFF33ff</drawable>
+    <drawable name="green">#0ff0ff</drawable>
+    <drawable name="apricot">#ffebcd</drawable> <!--白杏色 -->
+    
+</resources>

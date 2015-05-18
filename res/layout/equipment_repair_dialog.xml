@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment9"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="设备名称:">  
+    	</TextView>
+    	<TextView
+	        android:id="@+id/dialog9"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp">  
+	    </TextView>
+    	
+    </TableRow>
+    <TableRow
+        android:gravity="center">
+        
+        <TextView
+        	android:id="@+id/equipment1"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="报修日期:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog1"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="0000-00-00"
+        	android:textSize="15dp"
+	        android:inputType="number"
+	        android:focusable="false">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment2"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="报修时间:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog2"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="00:00:00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    	
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment3"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="备       忘:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog3"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment4"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="交       易:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog4"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment5"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="结       果:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog5"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:textSize="15dp">  
+	    </EditText>
+    </TableRow>
+    
+    <TableRow
+        android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment6"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="维修日期:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog6"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="0000-00-00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment7"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="维修时间:">  
+    	</TextView>
+    	<EditText
+	        android:id="@+id/dialog7"
+	        android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:hint="00:00:00"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </EditText>
+    </TableRow>
+    
+	<TableRow
+	    android:gravity="center">
+        <TextView
+        	android:id="@+id/equipment8"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="15dp"
+        	android:text="维修状态:">  
+    	</TextView>
+    	<Spinner
+	        android:id="@+id/dialog8"
+	        android:layout_width="200dp"
+        	android:layout_height="wrap_content"
+        	android:layout_marginLeft="15dp"
+        	android:entries="@array/repairstate"
+        	android:textSize="15dp"
+	        android:inputType="number">  
+	    </Spinner>
+    </TableRow>
+
+</TableLayout>

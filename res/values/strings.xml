@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">D&amp;E管理系统</string>
+    <string name="app_title">元器件管理系统</string>
+    <string name="action_settings">Settings</string>
+    <string name="category">类 别：</string>
+    <string name="user">用户名：</string>
+    <string name="password">密 码：</string>
+    <string name="tab_home">home</string>
+    <string name="tab_element">element</string>
+    <string name="tab_device">device</string>
+    <string name="tab_user">user</string>
+    <string name="tab_more">more</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>

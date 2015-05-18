@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="user">
+        <item>系统登陆</item>
+        <item>学生登陆</item>
+        <item>教师登录</item>
+    </string-array>
+    
+    <string-array name="student">
+        <item>学生</item>
+    </string-array>
+    
+    <string-array name="function">
+        <item>搜索</item>
+        <item>入库</item>
+        <item>出库</item>
+        <item>统计</item>
+        <item>盘点</item>
+        <item>更多</item>
+    </string-array>
+    
+    <string-array name="estate">
+        <item>good</item>
+        <item>repair</item>
+        <item>bad</item>
+        <item>lost</item>
+        <item>cancel</item>
+    </string-array>
+    
+    <string-array name="ustate">
+        <item>inuse</item>
+        <item>back</item>
+        <item>lend</item>
+    </string-array>
+    
+    <string-array name="repairstate">
+        <item>factory</item>
+        <item>own</item>
+    </string-array>
+    
+    <string-array name="repairstate1">
+        <item>维修状态</item>
+        <item>返厂</item>
+        <item>自修</item>
+    </string-array>
+    
+    <string-array name="equipmentfunc">
+        <item>删除</item>
+        <item>借用</item>
+        <item>归还</item>
+        <item>报修</item>
+        <item>盘点</item>
+    </string-array>
+    
+    <string-array name="goodsfunc">
+        <item>删除</item>
+        <item>出库</item>
+        <item>盘点</item>
+    </string-array>
+    
+    <string-array name="equipmentcal">
+        <item>table</item>
+        <item>设备报修表</item>
+        <item>设备借用表</item>
+        <item>设备采购表</item> 
+    </string-array>
+    
+    <string-array name="price">
+        <item>价格：↓</item>
+        <item>价格：↑</item>
+    </string-array>
+    
+    <string-array name="goodscal">
+        <item>元件入库表</item>
+        <item>元件出库表</item>  
+    </string-array>
+</resources>

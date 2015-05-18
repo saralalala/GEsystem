@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <include layout="@layout/goods_title"/>
+    
+	<LinearLayout 
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+	    <EditText
+	        android:id="@+id/item1"
+	        style="@style/titlestyle"
+	        android:inputType="number"
+	        android:focusable="false">  
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item2"
+	        style="@style/titlestyle">  
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item3"
+	        style="@style/titlestyle">"
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item4"
+	        android:inputType="number"
+	        style="@style/titlestyle">  
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item5"
+	        android:inputType="number"
+	        style="@style/titlestyle">  
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item6"
+	        android:inputType="number"
+	        style="@style/titlestyle">  
+	    </EditText>
+	    
+	    <EditText
+	        android:id="@+id/item7"
+	        android:inputType="number"
+	        style="@style/titlestyle">  
+	    </EditText>
+    
+	    <EditText
+	        android:id="@+id/item8"
+	        style="@style/titlestyle">  
+	    </EditText>
+    </LinearLayout>
+
+</LinearLayout>

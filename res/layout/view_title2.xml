@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/titlebar"
+    android:padding="10dp"
+    android:gravity="center" >
+
+    <TextView
+        android:id="@+id/title_text2"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:textSize="22dp"
+        android:text="设备"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"/> 
+        
+    <!--<ImageView
+        android:id="@+id/functionlist2"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:background="@drawable/icon_5_c"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"/>  -->
+    
+   <Spinner
+        android:id="@+id/spfunc"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:background="@drawable/list"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:entries="@array/equipmentcal"/>
+    
+    <ImageButton 
+        android:id="@+id/addbt"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_toLeftOf="@id/spfunc"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/add"/>
+
+
+    
+</RelativeLayout>

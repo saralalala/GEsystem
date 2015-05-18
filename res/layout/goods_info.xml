@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <include layout="@layout/goods_title"/>
+   
+    <LinearLayout 
+        android:id="@+id/linearele"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        
+        <ListView
+        android:id="@+id/lsele"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="1.5px"
+        android:divider="@drawable/lightgray"
+        android:headerDividersEnabled="true"/>
+        
+    </LinearLayout>
+    
+
+</LinearLayout>

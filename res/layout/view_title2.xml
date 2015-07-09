@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:background="@drawable/titlebar"
-    android:padding="10dp"
     android:gravity="center" >
 
     <TextView
@@ -28,8 +27,8 @@
     
    <Spinner
         android:id="@+id/spfunc"
-        android:layout_width="32dip"
-        android:layout_height="32dip"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
         android:background="@drawable/list"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
@@ -38,12 +37,20 @@
     
     <ImageButton 
         android:id="@+id/addbt"
-        android:layout_width="32dip"
-        android:layout_height="32dip"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
         android:layout_toLeftOf="@id/spfunc"
         android:layout_centerVertical="true"
         android:layout_marginRight="40dp"
         android:background="@drawable/add"/>
+    
+    <SearchView
+        android:id="@+id/sv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/addbt"
+        android:iconifiedByDefault="true"
+        android:imeOptions="actionSearch" />
 
 
     

@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 import com.example.desystem.adapter.EquipmentAddAdapter;
 import com.example.desystem.adapter.EquipmentBorrowAdapter;
+import com.example.desystem.domain.EquipmentAddInfo;
+import com.example.desystem.domain.EquipmentBorrowInfo;
 import com.example.desystem.service.OperateDB;
-import com.example.desysytem.domain.EquipmentAddInfo;
-import com.example.desysytem.domain.EquipmentBorrowInfo;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

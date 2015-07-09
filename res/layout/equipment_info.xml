@@ -2,25 +2,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical" >
     
-    <include layout="@layout/equipment_title"/>
-   
-    <LinearLayout 
+    <include layout="@layout/view_title2" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/expand_tab_selector"
+            android:checked="false" 
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="房间"
+            android:textColor="@color/black"
+            android:textOff="@null"
+            android:textOn="@null" >
+        </ToggleButton>
+
+        <View
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="@drawable/gray"
+            android:visibility="visible" />
+
+        <ToggleButton
+            android:id="@+id/manager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/expand_tab_selector"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="管理员"
+            android:textColor="@color/black"
+            android:textOff="@null"
+            android:textOn="@null" >
+        </ToggleButton>
+
+        <View
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="@drawable/gray"
+            android:visibility="visible" />
+        
+        <ToggleButton
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/expand_tab_selector"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="状态筛选"
+            android:textColor="@color/black"
+            android:textOff="@null"
+            android:textOn="@null" >
+        </ToggleButton>
+
+        <View
+            android:layout_width="1.0px"
+            android:layout_height="fill_parent"
+            android:background="@drawable/gray"
+            android:visibility="visible" />
+
+        <Spinner
+            android:id="@+id/spsort"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:entries="@array/price"/>
+        
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/gray"
+        android:visibility="visible" />
+
+    <include layout="@layout/equipment_title" />
+
+    <LinearLayout
         android:id="@+id/linearele"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        >
-        
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@drawable/lightgray"
+            android:visibility="visible" />
+
         <ListView
-        android:id="@+id/lsequip"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="1.5px"
-        android:divider="@drawable/lightgray"
-        android:headerDividersEnabled="true"/>
-        
+            android:id="@+id/lsequip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/lightgray"
+            android:dividerHeight="1.0px"
+            android:headerDividersEnabled="true" />
     </LinearLayout>
-    
 
 </LinearLayout>

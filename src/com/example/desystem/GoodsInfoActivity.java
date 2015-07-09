@@ -32,8 +32,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.desysytem.domain.GoodsInfo;
 import com.example.desystem.adapter.GoodsAdapter;
+import com.example.desystem.domain.GoodsInfo;
 import com.example.desystem.service.OperateDB;
 
 public class GoodsInfoActivity extends Activity {

@@ -7,8 +7,8 @@ import java.util.jar.Attributes.Name;
 
 import com.example.desystem.EquipmentInfoActivity.ExecRunnable;
 import com.example.desystem.adapter.EquipmentAdapter;
+import com.example.desystem.domain.EquipmentInfo;
 import com.example.desystem.service.OperateDB;
-import com.example.desysytem.domain.EquipmentInfo;
 
 import android.os.Bundle;
 import android.os.Handler;

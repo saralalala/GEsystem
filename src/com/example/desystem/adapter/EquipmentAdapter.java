@@ -3,7 +3,7 @@ package com.example.desystem.adapter;
 import java.util.List;
 
 import com.example.desystem.R;
-import com.example.desysytem.domain.EquipmentInfo;
+import com.example.desystem.domain.EquipmentInfo;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import com.example.desysytem.domain.GoodsInfo;
+import com.example.desystem.domain.GoodsInfo;
 
 public class DeleteRunnable implements Runnable{
 		

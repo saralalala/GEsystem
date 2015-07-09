@@ -32,12 +32,14 @@ import android.R.integer;
 import android.R.string;
 import android.util.Log;
 
-import com.example.desysytem.domain.ComponentInfo;
-import com.example.desysytem.domain.EquipmentAddInfo;
-import com.example.desysytem.domain.EquipmentBorrowInfo;
-import com.example.desysytem.domain.EquipmentInfo;
-import com.example.desysytem.domain.GoodsInfo;
-import com.example.desysytem.domain.RepairInfo;
+import com.example.desystem.domain.ComponentInfo;
+import com.example.desystem.domain.EquipmentAddInfo;
+import com.example.desystem.domain.EquipmentBorrowInfo;
+import com.example.desystem.domain.EquipmentInfo;
+import com.example.desystem.domain.GoodsInfo;
+import com.example.desystem.domain.RepairInfo;
+import com.example.desystem.domain.RoomInfo;
+import com.example.desystem.domain.TeacherInfo;
 
 
 public class OperateDB {
@@ -106,10 +108,11 @@ public class OperateDB {
 		HttpGet get = null;
 		try {
 			client = new DefaultHttpClient();//启用Cookie,须close()
+			Log.i("&&searchequipmenturl", "" + url);
 			get = new HttpGet(url);
 			HttpResponse httpResponse = client.execute(get);
 			if (httpResponse.getStatusLine().getStatusCode() == 200) {
-				Log.i("http","2");
+				
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						httpResponse.getEntity().getContent(), "utf-8"));
 				String str = "";
@@ -225,9 +228,9 @@ public class OperateDB {
 							jo.getString("type"),
 							jo.getString("spec"),
 							(float)jo.getDouble("price"),
-							jo.getInt("room"),
+							jo.getString("room"),
 							jo.getInt("groupno"),
-							jo.getInt("chargeperson"),
+							jo.getString("chargeperson"),
 							jo.getString("estate"),
 							jo.getString("ustate"),
 							jo.getString("repairstate")));
@@ -241,6 +244,93 @@ public class OperateDB {
 		}
 			return null;
 	}
+	
+	public  ArrayList<String> parseRoomJson(String jsonString){
+
+		if(jsonString != null){
+			ArrayList<String> roomInfos = new ArrayList<String>();
+			JSONObject jsonObj;
+			try {
+				
+				jsonObj = new JSONObject(jsonString);
+				JSONArray jsonLogin = jsonObj.getJSONArray("result");
+				roomInfos.add(0,"房间");
+				
+				for (int i = 0; i < jsonLogin.length(); i++) {
+					
+					JSONObject jo = jsonLogin.getJSONObject(i);
+					roomInfos.add(i+1,jo.getString("room"));
+					
+				}
+				return roomInfos;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			return null;
+	}
+	
+	
+//	public  ArrayList<RoomInfo> parseRoomJson(String jsonString){
+//
+//		if(jsonString != null){
+//			ArrayList<RoomInfo> roomInfos = new ArrayList<RoomInfo>();
+//			JSONObject jsonObj;
+//			try {
+//				
+//				jsonObj = new JSONObject(jsonString);
+//				JSONArray jsonLogin = jsonObj.getJSONArray("result");
+//				
+//				for (int i = 0; i < jsonLogin.length(); i++) {
+//					
+//					JSONObject jo = jsonLogin.getJSONObject(i);
+//					roomInfos.add(new RoomInfo(jo.getInt("roomtid"),
+//							jo.getString("room"),
+//							jo.getString("roomtype"),
+//							jo.getInt("seat"),
+//							jo.getString("phone"),
+//							jo.getString("passwd"),
+//							jo.getString("ip"),
+//							jo.getInt("open")));
+//					
+//				}
+//				return roomInfos;
+//			} catch (JSONException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//			return null;
+//	}
+	
+	
+	public  ArrayList<String> parseTeacherJson(String jsonString){
+
+		if(jsonString != null){
+			ArrayList<String> teacherInfos = new ArrayList<String>();
+			JSONObject jsonObj;
+			try {
+				
+				jsonObj = new JSONObject(jsonString);
+				JSONArray jsonLogin = jsonObj.getJSONArray("result");
+				teacherInfos.add(0,"管理员");
+				
+				for (int i = 0; i < jsonLogin.length(); i++) {
+					
+					JSONObject jo = jsonLogin.getJSONObject(i);
+					teacherInfos.add(i+1,jo.getString("name"));
+					
+				}
+				return teacherInfos;
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+			return null;
+	}
+	
 	
 	public  ArrayList<RepairInfo> parseRepairJson(String jsonString){
 

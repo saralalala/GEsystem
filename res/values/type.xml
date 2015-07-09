@@ -64,12 +64,40 @@
         <item>设备借用表</item>
         <item>设备采购表</item> 
     </string-array>
+   
+    <string-array name="room">
+        <item>所有房间</item>
+        <item>主楼611(12)</item>
+        <item>主楼511(2)</item>
+        <item>主楼510(30)</item>
+        <item>主楼611(12)</item>
+        <item>主楼711(22)</item>
+        <item>主楼603(1)</item>
+        <item>主楼622(0)</item>
+        <item>主楼519(10)</item>
+    </string-array>
+    
+    <string-array name="manager">
+        <item>管理员</item>
+        <item>袁东明(12)</item>
+        <item>姬红强(2)</item>
+        <item>王勤(30)</item>
+        <item>陈玉波(22)</item>
+        <item>张一(1)</item>
+        <item>张二(0)</item>
+        <item>张三(10)</item>
+    </string-array>
     
     <string-array name="price">
+        <item>综合排序</item>
         <item>价格：↓</item>
         <item>价格：↑</item>
     </string-array>
     
+    <string-array name="select">
+        <item>☬ 筛选</item>
+    </string-array>
+  
     <string-array name="goodscal">
         <item>元件入库表</item>
         <item>元件出库表</item>  

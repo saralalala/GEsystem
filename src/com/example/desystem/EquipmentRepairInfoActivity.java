@@ -3,10 +3,10 @@ import java.util.ArrayList;
 
 import com.example.desystem.adapter.GoodsAdapter;
 import com.example.desystem.adapter.RepairAdapter;
+import com.example.desystem.domain.AskrepairInfo;
+import com.example.desystem.domain.GoodsInfo;
+import com.example.desystem.domain.RepairInfo;
 import com.example.desystem.service.OperateDB;
-import com.example.desysytem.domain.AskrepairInfo;
-import com.example.desysytem.domain.GoodsInfo;
-import com.example.desysytem.domain.RepairInfo;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

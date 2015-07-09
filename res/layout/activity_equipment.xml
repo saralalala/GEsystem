@@ -14,42 +14,25 @@
             android:id="@+id/titleview"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            
             android:gravity="center_vertical"
             android:orientation="vertical" >
 
-
-            <!--  <LinearLayout
-                android:id="@+id/searchview"
-                android:layout_gravity="top"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp">
-                <EditText
-                    android:id="@+id/searchtext"
-                    android:layout_width="fill_parent"
-                    android:layout_height="32dp"
-                    android:paddingLeft="5dp"
-                    android:background="@drawable/shape"
-                    android:hint="搜索设备" />
-            </LinearLayout>-->
-
             <include layout="@layout/view_title2" />
-            
-             <TabWidget
+
+            <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
-                android:tabStripEnabled="false">
+                android:tabStripEnabled="false"
+                android:visibility="gone" >
             </TabWidget>
-            
         </LinearLayout>
 
         <FrameLayout
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent" >
         </FrameLayout>
     </LinearLayout>
 

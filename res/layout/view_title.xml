@@ -9,7 +9,7 @@
         android:id="@+id/backbutton"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_margin="10dp"
+        android:layout_margin="7dp"
         android:layout_marginLeft="10dp"
         android:background="@drawable/back"
         android:layout_alignParentLeft="true"

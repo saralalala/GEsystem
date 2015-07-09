@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <instrumentation
@@ -47,6 +47,7 @@
         </activity>
         <activity
             android:name="com.example.desystem.MainTabActivity4"
+            
             android:label="@string/app_title"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
             <intent-filter>

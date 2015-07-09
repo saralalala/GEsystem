@@ -2,8 +2,8 @@ package com.example.desystem;
 import java.util.ArrayList;
 
 import com.example.desystem.adapter.EquipmentAddAdapter;
+import com.example.desystem.domain.EquipmentAddInfo;
 import com.example.desystem.service.OperateDB;
-import com.example.desysytem.domain.EquipmentAddInfo;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,7 +26,7 @@ public class EquipmentAddInfoActivity extends Activity {
 	
 	private ArrayList<EquipmentAddInfo> addInfos;
 	private EquipmentAddAdapter adapter;
-	private final String searchHeader = "http://10.109.21.95/lab/search_equipmentbuy.php";
+	private final String searchHeader = "http://10.109.20.238/php/lab/search_equipmentbuy.php";
 	private ProgressDialog proDialog;
 	ListView ls;
 	ImageButton backbutton;

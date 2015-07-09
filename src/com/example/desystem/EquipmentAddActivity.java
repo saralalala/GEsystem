@@ -28,7 +28,7 @@ public class EquipmentAddActivity extends Activity{
 	Button ok,cancel;
 	TextView title;
 	ImageButton back,func;
-	private final String header = "http://10.109.21.95/lab/add_equipmentbuy.php?";
+	private final String header = "http://10.109.23.202/php/lab/add_equipmentbuy.php?";
 	private String flag;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -40,9 +40,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.desysytem.domain.EquipmentInfo;
-import com.example.desysytem.domain.GoodsInfo;
 import com.example.desystem.adapter.EquipmentAdapter;
+import com.example.desystem.domain.EquipmentInfo;
+import com.example.desystem.domain.GoodsInfo;
 import com.example.desystem.service.OperateDB;
 
 public class EquipmentListActivity extends Activity {

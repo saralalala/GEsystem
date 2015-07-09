@@ -43,7 +43,8 @@ public class MainTabActivity4 extends ActivityGroup{
 		
 		mHomeIntent = new Intent(MainTabActivity4.this,HomeActivity.class);
 		mElementIntent = new Intent(MainTabActivity4.this,GoodsListActivity.class);
-		mEquipmentIntent = new Intent(MainTabActivity4.this,EquipmentActivity.class);
+		mEquipmentIntent = new Intent(MainTabActivity4.this,EquipmentInfoActivity
+				.class);
 		mUserIntent = new Intent(MainTabActivity4.this,UserActivity.class);
 		mMoreIntent = new Intent(MainTabActivity4.this,MoreActivity.class);
 	}

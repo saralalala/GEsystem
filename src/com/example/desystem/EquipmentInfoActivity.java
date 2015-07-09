@@ -1,14 +1,21 @@
 package com.example.desystem;
 
+import java.security.PublicKey;
+import android.view.ViewGroup.LayoutParams;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.MaskFilter;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -28,6 +35,8 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.WebView.FindListener;
@@ -35,16 +44,28 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.PopupWindow.OnDismissListener;
+import android.widget.SearchView.OnQueryTextListener;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.SearchView;
+import android.widget.SimpleAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.TabHost;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
-import com.example.desysytem.domain.EquipmentInfo;
-import com.example.desysytem.domain.GoodsInfo;
 import com.example.desystem.adapter.EquipmentAdapter;
+import com.example.desystem.adapter.PopupAdapter;
+import com.example.desystem.domain.EquipmentInfo;
+import com.example.desystem.domain.GoodsInfo;
 import com.example.desystem.service.OperateDB;
 
 public class EquipmentInfoActivity extends Activity {
@@ -55,75 +76,534 @@ public class EquipmentInfoActivity extends Activity {
 	private final static int ITEM_REPAIR = 4;
 	private final static int ITEM_UPDATE = 5;
 
-	private ArrayList<EquipmentInfo> equipmentInfos = null;
+	private float displayWidth;
+	private float displayHeight;
+
+	private ArrayList<EquipmentInfo> equipmentInfos = null;//new ArrayList<EquipmentInfo>();
 	private EquipmentAdapter adapter;
-	private final String searchHeader = "http://10.109.21.95/lab/search_equipment.php";
-	private final String deleteHeader = "http://10.109.21.95/lab/delete_equipment.php?";
-	private final String updateHeader = "http://10.109.21.95/lab/update_equipment.php?";
-	private final String repairHeader = "http://10.109.21.95/lab/add_repair.php?";
-	private final String borrowHeader = "http://10.109.21.95/lab/borrow_equipment.php?";
-	private final String returnHeader = "http://10.109.21.95/lab/return_equipment.php?";
-	private final String search1 = "http://10.109.21.95/lab/repairstate_search.php?";
-	private final String order = "http://10.109.21.95/lab/price_order.php?";
-	private final String search3 = "http://10.109.21.95/lab/ustate_equipment.php?";
-	ListView ls;
+	private PopupAdapter roomadapter,manageradapter;
+	private HashMap<String, String> map = new HashMap<String, String>();
+	//private final String searchEquipment = "http://10.109.23.202/php/lab/search_equipment.php";
+	private final String searchRoom = "http://10.109.23.202/php/lab/search_room.php";
+	private final String searchTeacher = "http://10.109.23.202/php/lab/search_teacher.php";
+	private final String deleteHeader = "http://10.109.23.202/php/lab/delete_equipment.php?";
+	private final String updateHeader = "http://10.109.23.202/php/lab/update_equipment.php?";
+	private final String repairHeader = "http://10.109.23.202/php/lab/add_repair.php?";
+	private final String borrowHeader = "http://10.109.23.202/php/lab/borrow_equipment.php?";
+	private final String returnHeader = "http://10.109.23.202/php/lab/return_equipment.php?";
+	private final String select = "http://10.109.23.202/php/lab/select_equipment2.php?";//http://10.109.23.202/php/lab/select_equipment.php?";
+	private final String searchLimit = "http://10.109.23.202/php/lab/selectLimit_equipment.php?";
+	// private final String order =
+	// "http://10.109.21.95/lab/order_equipment.php?";
+	
+	ImageButton addbt;
+	Spinner spinnerTable;
+	SearchView sv;
+	boolean isFirst=true;
+	ListView ls,lsroom,lsmanager;
 	TextView equipmentid, equipment, spec, price, room, groupno, chargeperson,
 			estate, ustate, repairstate;
+
+	ToggleButton tbroom, tbmanager, tbselect;
+	PopupWindow roomWindow, managerWindow, selectWindow;
 	Spinner spinner;
+	View roomView, managerView, selectView;
+	RadioGroup radioe, radiou, radior;
+	Button reset,ok;
+	
+	ArrayList<String> roomStr = new ArrayList<String>();//{ "管理员", "袁东明", "姬红强", "王勤", "陈玉波", "张一", "张二",
+	//"张三" };
+	ArrayList<String> managerStr = new ArrayList<String>();//{ "房间", "主楼611", "主楼511", "主楼510", "主楼711",
+			//"主楼603", "主楼622", "主楼519" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.equipment_info);
 
-//		spinner = (Spinner) this.findViewById(R.id.equipment11);
-//		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-//
-//			@Override
-//			public void onItemSelected(AdapterView<?> arg0, View arg1,
-//					int arg2, long arg3) {
-//				// TODO Auto-generated method stub
-//				switch (arg2) {
-//
-//				case 0:
-//					
-//					break;
-//
-//				case 1:
-//					// startActivity(new
-//					// Intent(EquipmentActivity.this,EquipmentRepairInfoActivity.class));
-//					Map<String, String> map1 = new HashMap<String, String>();
-//					map1.put("repairstate", "factory");
-//					new Thread(new ExecRunnable(search1, map1)).start();
-//					
-//					break;
-//
-//				case 2:
-//					// startActivity(new
-//					// Intent(EquipmentActivity.this,EquipmentBorrowInfoActivity.class));
-//					Map<String, String> map2 = new HashMap<String, String>();
-//					map2.put("repairstate", "own");
-//					new Thread(new ExecRunnable(search1, map2)).start();
-//					
-//					break; 
-//
-//				default:
-//					break;
-//				}
-//
-//			}
-//
-//			@Override
-//			public void onNothingSelected(AdapterView<?> arg0) {
-//				// TODO Auto-generated method stub
-//				Log.e("TAG", "never come to here too");
-//			}
-//
-//		});
+		addbt = (ImageButton)findViewById(R.id.addbt);
+		addbt.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				startActivity(new Intent(EquipmentInfoActivity.this,EquipmentAddActivity.class));
+			}
+		});
+		
+		
+		spinnerTable = (Spinner)findViewById(R.id.spfunc);
+		spinnerTable.setOnItemSelectedListener(new OnItemSelectedListener() {
+			
+			 @Override
+	            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+	                // TODO Auto-generated method stub
+				 switch (arg2) {
+				 
+				 case 0:
+					 arg1.setVisibility(View.GONE);
+					 break;
+					 
+				 case 1:
+					startActivity(new Intent(EquipmentInfoActivity.this,EquipmentRepairInfoActivity.class));
+				 	spinner.setSelection(0);
+				 	break;
+				 
+				 case 2:
+						startActivity(new Intent(EquipmentInfoActivity.this,EquipmentBorrowInfoActivity.class));
+					 	spinner.setSelection(0);
+					 	break;
+					 	
+				 case 3:
+					startActivity(new Intent(EquipmentInfoActivity.this,EquipmentAddInfoActivity.class));
+					 spinner.setSelection(0);
+					 break;
 
+				 default:
+				 	break;
+				 	
+				 }
+	                
+	            }
+		
+			 @Override
+			 	public void onNothingSelected(AdapterView<?> arg0) {
+				 	// TODO Auto-generated method stub
+				 	Log.e("TAG","never come to here too");
+			 }
+             
+         });
+		
+		sv= (SearchView)findViewById(R.id.sv);
+		sv.setOnQueryTextListener(new OnQueryTextListener() {  
+			  
+            @Override  
+            public boolean onQueryTextSubmit(String query) {  
+                Log.d("%%%%%","onQueryTextSubmit()"+query);
+                
+                //searchLimit = searchLimit+"limit="+query;
+               // new Thread(new SearchRunnable()
+                return false;  
+            }  
+  
+            @Override  
+            public boolean onQueryTextChange(String newText) {  
+            	
+                Log.d("%%%%%", "onQueryTextChange(), newText=" + newText);  
+                return false;  
+            }  
+              
+        });  
+		
 		ls = (ListView) findViewById(R.id.lsequip);
+		adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
+				equipmentInfos);
+		ls.setAdapter(adapter);
 		registerForContextMenu(ls);
+
+		initUI();
+		initSelection();
+		initListener();
+		
+		new Thread(new InitRunnable()).start(); //初始化pupopwindow中ListView
+
+	}
+
+	public void initUI() {
+
+		displayWidth = ((Activity) this).getWindowManager().getDefaultDisplay()
+				.getWidth();
+		displayHeight = ((Activity) this).getWindowManager()
+				.getDefaultDisplay().getHeight();
+
+		LayoutInflater inflater = LayoutInflater.from(this);
+		roomView = inflater.inflate(R.layout.select_room, null);
+		managerView = inflater.inflate(R.layout.select_manager, null);
+		selectView = inflater.inflate(R.layout.select_state, null);
+
+		roomWindow = new PopupWindow(roomView, (int) displayWidth / 4,
+				LayoutParams.WRAP_CONTENT, true);
+		roomWindow.setAnimationStyle(R.style.PopupWindowAnimation);
+		roomWindow.setFocusable(true);// view响应touch监听后不再响应onClick()监听
+		roomWindow.setOutsideTouchable(true);
+		roomWindow.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.choosearea_bg_mid));
+
+		managerWindow = new PopupWindow(managerView, (int) displayWidth / 4,
+				LayoutParams.WRAP_CONTENT, true);
+		managerWindow.setAnimationStyle(R.style.PopupWindowAnimation);
+		managerWindow.setFocusable(true);
+		managerWindow.setOutsideTouchable(true);
+		managerWindow.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.choosearea_bg_mid));
+
+		selectWindow = new PopupWindow(selectView, (int) displayWidth / 4,
+				LayoutParams.WRAP_CONTENT, true);
+		selectWindow.setAnimationStyle(R.style.PopupWindowAnimation);
+		selectWindow.setFocusable(true);
+		selectWindow.setOutsideTouchable(true);
+		selectWindow.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.choosearea_bg_mid));
+
+		lsroom = (ListView) (roomView).findViewById(R.id.lsroom);
+		lsmanager = (ListView) (managerView)
+				.findViewById(R.id.lsmanager);
+
+
+		radioe = (RadioGroup) (selectView).findViewById(R.id.radioe);
+		radiou = (RadioGroup) (selectView).findViewById(R.id.radiou);
+		radior = (RadioGroup) (selectView).findViewById(R.id.radior);
+
+		reset = (Button) (selectView).findViewById(R.id.reset);
+		ok = (Button) (selectView).findViewById(R.id.ok);
+		
+		tbroom = (ToggleButton) findViewById(R.id.room);
+		tbmanager = (ToggleButton) findViewById(R.id.manager);
+		tbselect = (ToggleButton) findViewById(R.id.select);// togglebutton
+		spinner = (Spinner)findViewById(R.id.spsort);
+	}
+
+	public void initListener() {
+		
+		/*  监听ToggleButton */
+		
+		tbroom.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				ToggleButton tg = (ToggleButton) view;
+
+				if (tg.isChecked()) {
+
+					roomWindow.showAsDropDown(view, 20, 0);
+
+				} else {
+					
+					if (roomWindow.isShowing())
+						roomWindow.dismiss();
+				}
+			}
+		});
+		
+		tbmanager.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				ToggleButton tg = (ToggleButton) view;
+
+				if (tg.isChecked()) {
+
+					if (managerWindow != null && !managerWindow.isShowing())
+						managerWindow.showAsDropDown(view, 0, 0);
+				} else {
+
+					if (managerWindow != null && managerWindow.isShowing())
+						managerWindow.dismiss();
+				}
+			}// change state
+		});
+
+		tbselect.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				ToggleButton tg = (ToggleButton) view;
+
+				if (tg.isChecked()) {
+
+					selectWindow.showAsDropDown(view, 0, 0);
+
+				} else {
+
+					if (selectWindow.isShowing())
+						selectWindow.dismiss();
+				}
+			}
+		});
+		
+		roomWindow.setOnDismissListener(new OnDismissListener() {
+
+			@Override
+			public void onDismiss() {
+				// TODO Auto-generated method stub
+
+				if (tbroom.isChecked() && !roomWindow.isShowing())
+					tbroom.setChecked(false);
+			}
+		});
+
+		managerWindow.setOnDismissListener(new OnDismissListener() {
+
+			@Override
+			public void onDismiss() {
+				// TODO Auto-generated method stub
+				if (tbmanager.isChecked() && !managerWindow.isShowing())
+					tbmanager.setChecked(false);
+			}
+		});// 点击即消失，popupwindow消失设置监听
+
+		selectWindow.setOnDismissListener(new OnDismissListener() {
+
+			@Override
+			public void onDismiss() {
+				// TODO Auto-generated method stub
+
+				if (tbselect.isChecked() && !selectWindow.isShowing())
+					tbselect.setChecked(false);
+				// resetCheckBox();保存map中状态
+			}
+		});
+		
+		/*  监听PopWindow中的ListView */
+
+		lsmanager.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				if (arg2 == 0) {
+
+					tbmanager.setText(managerStr.get(arg2));
+					if (map.containsKey("chargeperson"))
+						map.remove("chargeperson");
+					managerWindow.dismiss();
+					// showDialog
+
+				} else {
+
+					tbmanager.setText(managerStr.get(arg2));
+					map.put("chargeperson", managerStr.get(arg2));//替换
+					managerWindow.dismiss();
+
+				}
+				
+				Log.i("##adapter1", ""+arg2);
+				
+				manageradapter = new PopupAdapter(EquipmentInfoActivity.this,managerStr);
+				manageradapter.changeSelected(arg2);
+				lsmanager.setAdapter(manageradapter);
+				
+				new Thread(new SelectRunnable(select, map)).start();
+			}
+
+		});
+
+		lsroom.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				if (arg2 == 0) {
+
+					tbroom.setText(roomStr.get(arg2));
+					if (map.containsKey("room"))
+						map.remove("room");
+					roomWindow.dismiss();
+
+				} else {
+
+					tbroom.setText(roomStr.get(arg2));
+					map.put("room", roomStr.get(arg2));
+					roomWindow.dismiss();
+					
+				}
+
+				Log.i("##adapter1", ""+arg2);
+				
+				roomadapter = new PopupAdapter(EquipmentInfoActivity.this,roomStr);
+				roomadapter.changeSelected(arg2);
+				lsroom.setAdapter(roomadapter);
+
+				new Thread(new SelectRunnable(select, map)).start();
+			}
+
+		});
+
+		/*  监听PopWindow中的Button */
+		
+		reset.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				radioe.clearCheck();
+				if (map.containsKey("estate"))
+					map.remove("estate");
+				radiou.clearCheck();
+				if (map.containsKey("ustate"))
+					map.remove("ustate");
+				radior.clearCheck();
+				if (map.containsKey("repairstate"))
+					map.remove("repairstate");
+				
+				Log.i("map", ""+map.toString());
+			}
+		});
+
+		ok.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View view) {
+
+				int radioeId = radioe.getCheckedRadioButtonId();
+				int radiouId = radiou.getCheckedRadioButtonId();
+				int radiorId = radior.getCheckedRadioButtonId();
+				
+				switch (radioeId) {
+
+				case R.id.radioe1:
+					map.put("estate", "good");
+					break;
+
+				case R.id.radioe2:
+					map.put("estate", "repair");
+					break;
+
+				case R.id.radioe3:
+					map.put("estate", "bad");
+					break;
+
+				case -1:
+					if (map.containsKey("estate"))
+						map.remove("estate");
+					break;
+
+				default:
+					break;
+				}
+
+				switch (radiouId) {
+
+				case R.id.radiou1:
+					map.put("ustate", "inuse");
+					break;
+
+				case R.id.radiou2:
+					map.put("ustate", "back");
+					break;
+
+				case R.id.radiou3:
+					map.put("ustate", "lend");
+					break;
+
+				case -1:
+					if (map.containsKey("ustate"))
+						map.remove("ustate");
+					break;
+
+				default:
+					break;
+				}
+
+				switch (radiorId) {
+
+				case R.id.radior1:
+					map.put("repairstate", "factory");
+					break;
+
+				case R.id.radior2:
+					map.put("repairstate", "own");
+					break;
+
+				case -1:
+					if (map.containsKey("repairstate"))
+						map.remove("repairstate");
+					break;
+
+				default:
+					break;
+				}
+				selectWindow.dismiss();
+				Log.i("map", ""+map.toString());
+				new Thread(new SelectRunnable(select,map)).start();
+			}
+		});
+		
+		spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+			
+			  @SuppressWarnings("unchecked")
+			@Override
+			  
+		        public void  onItemSelected(AdapterView<?> arg0, View arg1,
+		  
+		              int arg2, long arg3) {
+				  
+				  if(equipmentInfos != null){
+					  
+					  switch (arg2) {
+					  
+						case 1:
+							
+							//价格由高到底
+							adapter.notifyDataSetChanged();
+							break;
+							
+						case 2:
+							
+							Comparator comp = new Mycomparator();
+							Collections.sort(equipmentInfos,comp); 
+							
+							for(int i = 0;i<equipmentInfos.size();i++ ){
+								
+								EquipmentInfo p = (EquipmentInfo)equipmentInfos.get(i);
+								System.out.println(p.getPrice());
+							}
+							adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
+									equipmentInfos);
+							ls.setAdapter(adapter);
+							//adapter.notifyDataSetChanged();
+							break;
+							
+						default:
+							break;
+						}
+				  
+				  }
+		    
+		        }
+		  
+		  
+		        @Override
+		  
+		        public void  onNothingSelected(AdapterView<?> arg0) {
+		  
+		           // TODO Auto-generated method stub
+
+		        }
+		});
+
+	}
+
+	public void initSelection() {
+
+		lsroom.setSelection(0);
+		lsmanager.setSelection(0);
+		tbroom.setText("房间");
+		tbmanager.setText("管理员");
+		radioe.clearCheck();
+		radiou.clearCheck();
+		radior.clearCheck();
+		spinner.setSelection(0);
+		map.clear();
+
+	}
+	
+	public class Mycomparator implements Comparator{
+
+		public int compare(Object o1,Object o2) {
+		EquipmentInfo e1=(EquipmentInfo)o1;
+		EquipmentInfo e2=(EquipmentInfo)o2; 
+		
+		if(e1.getPrice()<e2.getPrice())
+			
+			return 1;
+		else
+			
+			return 0;
+		}
 
 	}
 
@@ -133,46 +613,87 @@ public class EquipmentInfoActivity extends Activity {
 
 			super.handleMessage(msg);
 			switch (msg.what) {
+			
 			case 1:
 				Bundle bundle1 = msg.getData();
 				ArrayList list1 = bundle1.getParcelableArrayList("list");
+//				equipmentInfos.clear();  
+//				equipmentInfos.addAll((ArrayList<EquipmentInfo>) list1.get(0));
 				equipmentInfos = (ArrayList<EquipmentInfo>) list1.get(0);
 
 				if (equipmentInfos == null) {
 
-					Toast.makeText(getApplicationContext(), "信息为空，请检查网络设置~_~",
+					Toast.makeText(getApplicationContext(), "无法获取数据，请检查网络设置~_~",
+							Toast.LENGTH_SHORT).show();
+				}// 没有获得请求数据或数据没有正确解析
+
+				else {
+					
+					adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
+							equipmentInfos);
+					ls.setAdapter(adapter);
+					//adapter.notifyDataSetChanged();//监听数据源对象（不是数据变量equipmentInfos）的改变
+
+				}
+				break;
+				
+			case 2:
+				Bundle bundle2 = msg.getData();
+				ArrayList list2 = bundle2.getParcelableArrayList("list");
+//				equipmentInfos.clear();  
+//				equipmentInfos.addAll((ArrayList<EquipmentInfo>) list2.get(0));
+				equipmentInfos = (ArrayList<EquipmentInfo>) list2.get(0);
+
+				if (equipmentInfos == null) {
+
+					Toast.makeText(getApplicationContext(), "没有查询数据~_~",
 							Toast.LENGTH_LONG).show();
+					adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
+							equipmentInfos);
+					ls.setAdapter(adapter); 
 				}// 没有获得请求数据或数据没有正确解析
 
 				else {
 					adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
 							equipmentInfos);
 					ls.setAdapter(adapter);
-					// adapter.notifyDataSetChanged();
+					//adapter.notifyDataSetChanged();
 
 				}
 				break;
 
-			case 2:
-				Bundle bundle2 = msg.getData();
-				ArrayList list2 = bundle2.getParcelableArrayList("list");
-				equipmentInfos = (ArrayList<EquipmentInfo>) list2.get(0);
+			case 3:
+				Bundle bundle3 = msg.getData();
+				ArrayList list3 = bundle3.getParcelableArrayList("list");
+//				equipmentInfos.clear();  
+//				equipmentInfos.addAll((ArrayList<EquipmentInfo>) list3.get(0));
+				equipmentInfos = (ArrayList<EquipmentInfo>) list3.get(0);
 
 				if (equipmentInfos == null) {
 
 					Toast.makeText(getApplicationContext(), "操作失败~_~",
 							Toast.LENGTH_LONG).show();
-				}// 没有获得请求数据或数据没有正确解析
+				}
 
 				else {
 
 					Toast.makeText(getApplicationContext(), "操作成功~~",
 							Toast.LENGTH_LONG).show();
+					initSelection();
 					adapter = new EquipmentAdapter(EquipmentInfoActivity.this,
 							equipmentInfos);
 					ls.setAdapter(adapter);
+					//adapter.notifyDataSetChanged();
 
 				}
+				break;
+				
+			case 4:
+				
+				roomadapter = new PopupAdapter(EquipmentInfoActivity.this,roomStr);
+				lsroom.setAdapter(roomadapter);
+				manageradapter = new PopupAdapter(EquipmentInfoActivity.this,managerStr);
+				lsmanager.setAdapter(manageradapter);
 				break;
 
 			default:
@@ -182,6 +703,40 @@ public class EquipmentInfoActivity extends Activity {
 		}
 	};// 运行在主线程中
 
+	
+	class InitRunnable implements Runnable {
+
+
+		@Override            
+		public void run() {
+
+			// TODO Auto-generated method stub
+			
+			OperateDB operateDB = new OperateDB();
+			String jsonRoom = operateDB.getInputStream(searchRoom);
+			String jsonTeacher = operateDB.getInputStream(searchTeacher);
+
+			Log.i("##searchroom", jsonRoom + "");
+			Log.i("##searchteacher", jsonTeacher + "");
+
+			if (jsonRoom != null) {
+
+				roomStr = operateDB.parseRoomJson(jsonRoom);
+
+			}
+			
+			if (jsonTeacher != null) {
+
+				managerStr = operateDB.parseTeacherJson(jsonTeacher);
+
+			}
+
+			handler.sendEmptyMessage(4);
+
+		}
+	};
+	
+	
 	class SearchRunnable implements Runnable {
 
 		private String urlHeader;
@@ -198,13 +753,59 @@ public class EquipmentInfoActivity extends Activity {
 			ArrayList<EquipmentInfo> g = null;
 			String jsonString = operateDB.getInputStream(urlHeader);
 
-			Log.i("&&searchequipment", "" + jsonString);
+			Log.i("##searchquipment", jsonString + "");
+
 			if (jsonString != null) {
 
 				g = operateDB.parseEquipmentJson(jsonString);
+
+			}
+			
+			Message msg = handler.obtainMessage(1);
+			Bundle bundle = new Bundle();
+			ArrayList list = new ArrayList(); // 需要传递的ArrayList<Object>
+			list.add(g);
+			bundle.putParcelableArrayList("list", list);// list数组中的对象可以序列化
+			msg.setData(bundle);
+			msg.sendToTarget();// 利用handler将信息传给UI线程i
+		}
+	};
+	
+	class SelectRunnable implements Runnable {
+
+		private String urlHeader;
+		private Map<String, String> map;
+
+		public SelectRunnable(String urlHeader,Map<String, String> map) {
+			this.urlHeader = urlHeader;
+			this.map = map;
+		}
+
+		@Override
+		public void run() {
+
+			// TODO Auto-generated method stub
+			OperateDB operateDB = new OperateDB();
+			ArrayList<EquipmentInfo> g = null;
+			String jsonString = "";
+			if (map.size() == 0) {
+
+				jsonString = operateDB.getInputStream(urlHeader);
+
+			} else {
+
+				jsonString = new OperateDB().getInputStream(urlHeader, map);
 			}
 
-			Message msg = handler.obtainMessage(1);
+			Log.i("##selectquipment", jsonString + "");
+
+			if (jsonString != null) {
+
+				g = operateDB.parseEquipmentJson(jsonString);
+
+			}
+
+			Message msg = handler.obtainMessage(2);
 			Bundle bundle = new Bundle();
 			ArrayList list = new ArrayList(); // 需要传递的ArrayList<Object>
 			list.add(g);
@@ -230,8 +831,17 @@ public class EquipmentInfoActivity extends Activity {
 			// TODO Auto-generated method stub
 			OperateDB operateDB = new OperateDB();
 			ArrayList<EquipmentInfo> g = null;
-			String jsonString = new OperateDB().getInputStream(urlHeader, map);
-			Log.i("##borrowequipment", jsonString + "");
+			String jsonString = "";
+			if (map.size() == 0) {
+
+				jsonString = operateDB.getInputStream(urlHeader);
+
+			} else {
+
+				jsonString = new OperateDB().getInputStream(urlHeader, map);
+			}
+
+			Log.i("##operatequipment", jsonString + "");
 
 			if (jsonString != null) {
 
@@ -239,7 +849,7 @@ public class EquipmentInfoActivity extends Activity {
 
 			}
 
-			Message msg = handler.obtainMessage(2);
+			Message msg = handler.obtainMessage(3);
 			Bundle bundle = new Bundle();
 			ArrayList list = new ArrayList(); // 需要传递的ArrayList<Object>
 			list.add(g);
@@ -567,7 +1177,9 @@ public class EquipmentInfoActivity extends Activity {
 	@Override
 	protected void onResume() {
 		Log.i("***", "EquipmentInfoActivity onResume");
-		new Thread(new SearchRunnable(searchHeader)).start();// 设置标签，元件信息的更新
+		
+		initSelection();
+		new Thread(new SearchRunnable(select)).start();// 设置标签，元件信息的更新
 		super.onResume();
 	}
 

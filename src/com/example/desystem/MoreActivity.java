@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.desystem.adapter.UserFuncAdapter;
-import com.example.desysytem.domain.UserFuncInfo;
+import com.example.desystem.domain.UserFuncInfo;
 
 import android.os.Bundle;
 import android.app.Activity;

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:id="@+id/estate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="设备状态"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/radioe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radioe1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="good" />
+
+            <RadioButton
+                android:id="@+id/radioe2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="repair" />
+
+            <RadioButton
+                android:id="@+id/radioe3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bad" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/gray"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:id="@+id/ustate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="借用状态"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/radiou"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radiou1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="inuse" />
+
+            <RadioButton
+                android:id="@+id/radiou2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="back" />
+
+            <RadioButton
+                android:id="@+id/radiou3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lend" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/gray"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:id="@+id/repairstate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="借用状态"
+            android:textSize="20dp" />
+
+        <RadioGroup
+            android:id="@+id/radior"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radior1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="factory" />
+
+            <RadioButton
+                android:id="@+id/radior2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="own" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlebar"
+            android:text="重置" />
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/titlebar"
+            android:text="完成" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:background="@drawable/gray"
+        android:visibility="visible" />
+
+</LinearLayout>

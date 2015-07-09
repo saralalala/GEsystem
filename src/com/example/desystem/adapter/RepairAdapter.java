@@ -3,8 +3,8 @@ package com.example.desystem.adapter;
 import java.util.List;
 
 import com.example.desystem.R;
-import com.example.desysytem.domain.EquipmentInfo;
-import com.example.desysytem.domain.RepairInfo;
+import com.example.desystem.domain.EquipmentInfo;
+import com.example.desystem.domain.RepairInfo;
 
 import android.content.Context;
 import android.view.LayoutInflater;

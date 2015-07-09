@@ -19,8 +19,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
+import com.example.desystem.domain.ComponentInfo;
 import com.example.desystem.service.OperateDB;
-import com.example.desysytem.domain.ComponentInfo;
 
 import android.app.Activity;
 import android.content.Intent;
